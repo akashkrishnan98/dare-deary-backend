@@ -7,17 +7,18 @@ const putDiaries = (): Express =>
     const { id } = req.params;
 
     if (!id)
-      res.status(400).send({ status: 400, message: "id is required to PUT" });
+      return res
+        .status(400)
+        .send({ status: 400, message: "id is required to PUT" });
 
     let matchedDiary = MockData.MockDiariesData.find(
       (diary) => diary.id === id
     );
 
     if (!matchedDiary) {
-      res
+      return res
         .status(404)
         .send({ status: 404, message: "Diary with this id not found" });
-      return;
     }
 
     const { title, content, diaryDate } = req.body;

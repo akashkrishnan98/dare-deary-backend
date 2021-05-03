@@ -7,7 +7,7 @@ const getEachDiaries = (): Express =>
     const diary = MockData.MockDiariesData.find(
       (diary) => diary.id === req.params.id
     );
-    if (!diary) res.status(404).send("404. Diary not found..");
+    if (!diary) return res.status(404).send("404. Diary not found..");
     res.send(diary);
   });
 

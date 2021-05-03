@@ -13,13 +13,13 @@ const postDiaries = (): Express =>
       { key: "title", value: title },
       { key: "content", value: content },
       { key: "userEmail", value: userEmail },
-      { key: " diaryDate", value: diaryDate },
+      { key: "diaryDate", value: diaryDate },
     ];
 
     mandatoryFields.forEach((field) => {
       const isFieldPresent = validations.isMandatory(field.value);
       if (!isFieldPresent)
-        res
+        return res
           .status(400)
           .send({ err: 400, message: `The ${field.key} field is mandatory` });
     });
