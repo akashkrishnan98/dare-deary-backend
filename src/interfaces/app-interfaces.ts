@@ -1,3 +1,5 @@
+import { Request } from "express";
+
 export interface IKeyValue<T> {
   key: string;
   value: T;
@@ -12,3 +14,9 @@ export interface IDiary {
   createdAt: Date;
   lastModifiedAt: Date;
 }
+
+export interface IBearerUser {
+  name: string;
+}
+
+export type IAuthRequest = Request & { user?: IBearerUser };

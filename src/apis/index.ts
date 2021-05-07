@@ -1,8 +1,5 @@
-import getDiaries from "./getDiaries";
-import getEachDiaries from "./getEachDiaries";
-import postDiaries from "./postDiaries";
-import putDiaries from "./putDiaries";
+import diaryApis from "./diaryApis";
 
-const apis = { getDiaries, getEachDiaries, postDiaries, putDiaries };
+const apis = { diaryApis };
 
 export default apis;

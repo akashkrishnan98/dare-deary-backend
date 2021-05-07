@@ -1,14 +1,10 @@
 import apis from "./apis";
-import { listerToServer, useExpressJSON } from "./utils/api";
+import { listerToServer } from "./utils/server";
 
-useExpressJSON();
-
-apis.getDiaries();
-
-apis.getEachDiaries();
-
-apis.postDiaries();
-
-apis.putDiaries();
+// Diary APIS
+apis.diaryApis.getDiaries();
+apis.diaryApis.getEachDiaries();
+apis.diaryApis.postDiaries();
+apis.diaryApis.putDiaries();
 
 listerToServer();
