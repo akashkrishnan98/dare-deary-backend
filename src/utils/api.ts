@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Response } from "express";
-import NODE_ENV from "../config";
+import NODE_ENV from "../configs/env";
 import { IGetAuthStatusResponse } from "../interfaces/api-interfaces";
 
 const AUTH_DOMAIN = NODE_ENV.AUTH_DOMAIN || "http://localhost:3001";
@@ -10,6 +10,7 @@ const ENDPOINTS = {
     `${AUTH_DOMAIN}/api/verify-token?accessToken=${token}`,
 };
 
+// To get the Auth Status from the Auth server
 export const getAuthStatus = (
   token: string
 ): Promise<IGetAuthStatusResponse> => {

@@ -1,6 +1,6 @@
 import express, { Express } from "express";
 import http from "http";
-import NODE_ENV from "../config";
+import NODE_ENV from "../configs/env";
 
 const APP_PORT = NODE_ENV.PORT ?? 3000;
 
